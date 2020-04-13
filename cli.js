@@ -15,6 +15,8 @@ if (sinceSwitch === '-d') {
   assignedSince = 'weekly'
 }
 
+console.log(assignedSince);
+
 const capitalize = words =>
   words.charAt(0).toUpperCase() + words.slice(1);
 
