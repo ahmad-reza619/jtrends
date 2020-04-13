@@ -1,0 +1,12 @@
+{
+  "name": "wazzup",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@huchenme/github-trending": "^2.3.0"
+  },
+  "bin": {
+    "wazzup": "./cli.js"
+  }
+}
