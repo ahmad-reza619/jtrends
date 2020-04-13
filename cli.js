@@ -2,10 +2,18 @@
 
 const githubTrends = require('@huchenme/github-trending');
 
-const [lang, since] = process.argv
+const [,, sinceSwitch] = process.argv
 
-let assignedLang = 'javascript' // default to js
-let assignedSince = 'weekly'
+let assignedLang = 'javascript'
+let assignedSince;
+
+if (sinceSwitch === '-d' || sinceSwitch === '') {
+  assignedSince = 'daily'
+} else if (sinceSwitch === '-m') {
+  assignedSince = 'monthly'
+} else if (sinceSwitch === '' || sinceSwitch === '-w') {
+  assignedSince = 'weekly'
+}
 
 const capitalize = words =>
   words.charAt(0).toUpperCase() + words.slice(1);
@@ -17,7 +25,7 @@ githubTrends.fetchRepositories({ language: assignedLang, since: assignedSince })
     const topThree = repo.slice(0, 3);
     const randomEmoji = ['🚀', '❤️', '🎉'];
     const message = `
-${capitalize(assignedLang)} Trending ${capitalize(assignedSince)} ✨✨✨
+Javascript Trending ${capitalize(assignedSince)} ✨✨✨
 
 ${line(40)}
 
