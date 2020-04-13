@@ -5,9 +5,9 @@ const githubTrends = require('@huchenme/github-trending');
 const [,, sinceSwitch] = process.argv
 
 let assignedLang = 'javascript'
-let assignedSince;
+let assignedSince = '';
 
-if (sinceSwitch === '-d' || sinceSwitch === '') {
+if (sinceSwitch === '-d') {
   assignedSince = 'daily'
 } else if (sinceSwitch === '-m') {
   assignedSince = 'monthly'
